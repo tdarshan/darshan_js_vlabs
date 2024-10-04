@@ -20,6 +20,10 @@
                 <h3>Chemicals Supplies</h3>
 
                 <div class="actions" id="row-actions">
+                    <button class="border-0 btn btn-danger" id="deleteRowBtn">
+                        <i class="bi bi-trash"></i>
+                    </button>
+
                     <button class="btn btn-primary px-2 py-1 border-none" type="button" data-bs-toggle="modal"
                         data-bs-target="#addItemModal">
                         <i class="bi bi-plus-circle"></i>
@@ -33,10 +37,35 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Chemical Name</th>
+                        <th scope="col">id</th>
+                        <th scope="col">
+                            <button class="border-0 bg-transparent" id="sortByNameAsc">
+                                <i class="bi bi-arrow-up"></i>
+                            </button>
+                            Chemical Name
+                            <button class="border-0 bg-transparent" id="sortByNameDsc">
+                                <i class="bi bi-arrow-down"></i>
+                            </button>
+                        </th>
                         <th scope="col">Vendor</th>
-                        <th scope="col">Density</th>
-                        <th scope="col">Viscosity</th>
+                        <th scope="col">
+                            <button class="border-0 bg-transparent" id="sortByDensityAsc">
+                                <i class="bi bi-arrow-up"></i>
+                            </button>
+                            Density
+                            <button class="border-0 bg-transparent" id="sortByDensityDsc">
+                                <i class="bi bi-arrow-down"></i>
+                            </button>
+                        </th>
+                        <th scope="col">
+                            <button class="border-0 bg-transparent" id="sortByViscosityAsc">
+                                <i class="bi bi-arrow-up"></i>
+                            </button>
+                            Viscosity
+                            <button class="border-0 bg-transparent" id="sortByViscosityDsc">
+                                <i class="bi bi-arrow-down"></i>
+                            </button>
+                        </th>
                         <th scope="col">Packaging</th>
                         <th scope="col">Pack size</th>
                         <th scope="col">Unit</th>
@@ -77,7 +106,8 @@
 
                         <div class="form-item form-field mb-3">
                             <label for="viscosity" class="form-label">Viscosity:</label>
-                            <input type="number" id="viscosity" name="viscosity" step="0.01" class="form-control" required />
+                            <input type="number" id="viscosity" name="viscosity" step="0.01" class="form-control"
+                                required />
                         </div>
 
                         <div class="form-item form-field mb-3">
