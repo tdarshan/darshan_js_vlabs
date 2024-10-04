@@ -6,3 +6,11 @@ i.active {
     color: blue;
     background-color: #fff;
 }
+
+.pointers-none {
+    pointer-events: none;
+}
+
+.pointers-none {
+    cursor: not-allowed !important;
+}

@@ -109,7 +109,7 @@ function attachRowCheckListeners() {
             check.addEventListener("click", function () {
                 rowChecks.forEach((r) => r.classList.remove("active"));
                 this.classList.add("active");
-
+                updateRowBtn.classList.remove("pointers-none");
                 selectedRowId = this.id.split("-")[2];
             });
         });
@@ -161,4 +161,14 @@ function getTableElements() {
     });
 
     return data;
+}
+
+
+const updateRowBtn = document.getElementById("updateRowBtn");
+if (updateRowBtn) {
+    updateRowBtn.addEventListener("click", function() {
+        let editIdElement = document.getElementById("edit-item-id"); 
+
+        editIdElement.innerHTML = selectedRowId;
+    });
 }
