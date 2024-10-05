@@ -9,7 +9,7 @@ else {
         .then((data) => {
             return data.DATA;
         });
-    // console.log(JSON.parse(JSON.stringify(DATA)));
+    console.log(JSON.parse(JSON.stringify(DATA)));
 }
 
 function renderTable(data) {
@@ -231,7 +231,7 @@ const saveDataBtn = document.getElementById("saveDataBtn");
 
 if (saveDataBtn) {
     saveDataBtn.addEventListener("click", async function (e) {
-
+        console.log("save");
         let rowsData = getTableElements();
         localStorage.setItem('DATA', JSON.stringify(rowsData));
 
@@ -242,6 +242,7 @@ if (saveDataBtn) {
 const refreshDataBtn = document.getElementById("refreshDataBtn");
 if (refreshDataBtn) {
     refreshDataBtn.addEventListener("click", function () {
+        console.log("refresh!");
         localStorage.removeItem("DATA");
         renderTable(DATA);
     });
@@ -251,6 +252,7 @@ if (refreshDataBtn) {
 const moveUpBtn = document.getElementById("moveUpBtn");
 if (moveUpBtn) {
     moveUpBtn.addEventListener("click", function () {
+        console.log("move up!");
         move("up", selectedRowId);
     });
 }
@@ -258,6 +260,7 @@ if (moveUpBtn) {
 const moveDownBtn = document.getElementById("moveDownBtn");
 if (moveDownBtn) {
     moveDownBtn.addEventListener("click", function () {
+        console.log("move down!");
         move("down", selectedRowId);
     });
 }
