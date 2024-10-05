@@ -21,7 +21,24 @@
 
                 <div class="actions" id="row-actions">
 
-                    <button class="border-0 btn btn-primary pointers-none" id="updateRowBtn" type="button" data-bs-toggle="modal"
+                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                        <button type="button" id="moveUpBtn" class="btn btn-outline-info">
+                            <i class="bi bi-arrow-up"></i>
+                        </button>
+                        <button type="button" id="moveDownBtn" class="btn btn-outline-info">
+                            <i class="bi bi-arrow-down"></i>
+                        </button>
+                      </div>
+
+                    <button class="border-0 btn btn-info" id="refreshDataBtn">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+
+                    <button class="border-0 btn btn-success" id="saveDataBtn">
+                        <i class="bi bi-floppy"></i>
+                    </button>
+
+                    <button class="border-0 btn btn-secondary pointers-none" id="updateRowBtn" type="button" data-bs-toggle="modal"
                         data-bs-target="#updateItemModal">
                         <i class="bi bi-pen"></i>
                     </button>

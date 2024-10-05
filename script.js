@@ -1,4 +1,16 @@
-import { DATA } from './data.js';
+let DATA;
+
+if (localStorage.getItem("DATA")) {
+    DATA = JSON.parse(localStorage.getItem("DATA"));
+}
+else {
+    DATA = await fetch('./data.json')
+        .then((resp) => resp.json())
+        .then((data) => {
+            return data.DATA;
+        });
+    // console.log(JSON.parse(JSON.stringify(DATA)));
+}
 
 function renderTable(data) {
     const tableBody = document.querySelector("#product--table tbody");
@@ -14,7 +26,7 @@ function renderTable(data) {
             <i class="bi bi-check" id="row-item-${item.id}"></i>
         </button>
         </td>`;
-        
+
         for (let key in item) {
             row.innerHTML += `<td data-key="${key}"> ${item[key]} </td>`;
         }
@@ -117,7 +129,7 @@ function attachRowCheckListeners() {
 }
 
 let selectedRowId = null;
-attachRowCheckListeners(); 
+attachRowCheckListeners();
 
 let deleteRowBtn = document.getElementById("deleteRowBtn");
 if (deleteRowBtn) {
@@ -131,7 +143,7 @@ function deleteRow(index = null) {
 
     if (index !== null) {
         let filteredData = tableData.filter((item) => item.id != index);
-        renderTable(filteredData);  
+        renderTable(filteredData);
     } else {
         alert("Please select a Row!");
     }
@@ -166,9 +178,128 @@ function getTableElements() {
 
 const updateRowBtn = document.getElementById("updateRowBtn");
 if (updateRowBtn) {
-    updateRowBtn.addEventListener("click", function() {
-        let editIdElement = document.getElementById("edit-item-id"); 
+    updateRowBtn.addEventListener("click", function () {
+        let editIdElement = document.getElementById("edit-item-id");
 
         editIdElement.innerHTML = selectedRowId;
+
+        updateRowData();
     });
+}
+
+function updateRowData() {
+
+    const updateFormEl = document.getElementById("updateDataForm");
+    let renderedData = getTableElements();
+    if (updateFormEl) {
+        let data = new FormData(updateFormEl);
+        let updateFormData = { id: Date.now() };
+
+
+        let rowData = renderedData.filter((item) => item.id == selectedRowId);
+
+        for (let [key, value] of data.entries()) {
+            updateFormData[key] = rowData[0][key];
+        }
+
+    }
+
+    updateFormEl.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let formData = new FormData(updateFormEl);
+        let itemData = { id: selectedRowId };
+
+        for (let [key, value] of formData.entries()) {
+            itemData[key] = isNaN(value) ? value : +value;
+        }
+
+        let updatedDataSet = renderedData.map((item) => {
+            if (item.id == selectedRowId) {
+                return itemData;
+            }
+            return item;
+        });
+
+        renderTable(updatedDataSet);
+
+    });
+}
+
+
+const saveDataBtn = document.getElementById("saveDataBtn");
+
+if (saveDataBtn) {
+    saveDataBtn.addEventListener("click", async function (e) {
+
+        let rowsData = getTableElements();
+        localStorage.setItem('DATA', JSON.stringify(rowsData));
+
+    });
+    saveDataBtn.click();
+}
+
+const refreshDataBtn = document.getElementById("refreshDataBtn");
+if (refreshDataBtn) {
+    refreshDataBtn.addEventListener("click", function () {
+        localStorage.removeItem("DATA");
+        renderTable(DATA);
+    });
+}
+
+
+const moveUpBtn = document.getElementById("moveUpBtn");
+if (moveUpBtn) {
+    moveUpBtn.addEventListener("click", function () {
+        move("up", selectedRowId);
+    });
+}
+
+const moveDownBtn = document.getElementById("moveDownBtn");
+if (moveDownBtn) {
+    moveDownBtn.addEventListener("click", function () {
+        move("down", selectedRowId);
+    });
+}
+
+
+function move(direction, index = null) {
+    if (index == null) {
+        alert("Please select a row!");
+    }
+
+
+    let rowsData = getTableElements();
+
+    let itemIndex;
+    let itemData = rowsData.filter((itm, index) => {
+        if (itm.id == selectedRowId) {
+            itemIndex = index;
+        }
+        return itm.id == selectedRowId;
+    });
+
+
+    let currentItemData = itemData[0];
+
+    if (direction == 'up') {
+        if (itemIndex > 0) {
+            rowsData[itemIndex] = rowsData[itemIndex - 1];
+            rowsData[itemIndex - 1] = currentItemData;
+        }
+        else {
+            alert("You can't move up!");
+        }
+    }
+    else {
+        if(itemIndex < rowsData.length-1) {
+            rowsData[itemIndex] = rowsData[itemIndex + 1];
+            rowsData[itemIndex + 1] = currentItemData;
+        }
+        else {
+            alert("You can't move Down!");
+        }
+    }
+    renderTable(rowsData);
+    saveDataBtn.click();
 }

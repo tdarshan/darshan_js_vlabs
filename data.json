@@ -1,0 +1,224 @@
+{
+    "DATA": [
+        {
+            "id": 1,
+            "chemical_name": "Ammonium Potash",
+            "vendor": "Formosa",
+            "density": 3543.5,
+            "viscosity": 60.65,
+            "packaging": "Bag",
+            "pack_size": 100,
+            "unit": "Kg",
+            "quantity": 6500
+        },
+        {
+            "id": 2,
+            "chemical_name": "Sodium Chloride",
+            "vendor": "ChemEx",
+            "density": 2165.7,
+            "viscosity": 75.3,
+            "packaging": "Barrel",
+            "pack_size": 50,
+            "unit": "Kg",
+            "quantity": 4300
+        },
+        {
+            "id": 3,
+            "chemical_name": "Calcium Carbonate",
+            "vendor": "GlobeChem",
+            "density": 2714.8,
+            "viscosity": 55.2,
+            "packaging": "Bag",
+            "pack_size": 25,
+            "unit": "Kg",
+            "quantity": 1200
+        },
+        {
+            "id": 4,
+            "chemical_name": "Magnesium Sulfate",
+            "vendor": "ChemTech",
+            "density": 2800.0,
+            "viscosity": 48.6,
+            "packaging": "Drum",
+            "pack_size": 200,
+            "unit": "L",
+            "quantity": 500
+        },
+        {
+            "id": 5,
+            "chemical_name": "Benzene",
+            "vendor": "PetroChem",
+            "density": 879.2,
+            "viscosity": 1.19,
+            "packaging": "Drum",
+            "pack_size": 100,
+            "unit": "L",
+            "quantity": 2500
+        },
+        {
+            "id": 6,
+            "chemical_name": "Acetone",
+            "vendor": "LabSupplies",
+            "density": 791.0,
+            "viscosity": 3.4,
+            "packaging": "Bottle",
+            "pack_size": 5,
+            "unit": "L",
+            "quantity": 400
+        },
+        {
+            "id": 7,
+            "chemical_name": "Sulfuric Acid",
+            "vendor": "IndusChem",
+            "density": 1840.0,
+            "viscosity": 26.7,
+            "packaging": "Barrel",
+            "pack_size": 50,
+            "unit": "Kg",
+            "quantity": 6000
+        },
+        {
+            "id": 8,
+            "chemical_name": "Nitric Acid",
+            "vendor": "ChemSpec",
+            "density": 1500.0,
+            "viscosity": 2.02,
+            "packaging": "Drum",
+            "pack_size": 25,
+            "unit": "Kg",
+            "quantity": 1200
+        },
+        {
+            "id": 9,
+            "chemical_name": "Sodium Hydroxide",
+            "vendor": "PureChem",
+            "density": 2130.0,
+            "viscosity": 0.52,
+            "packaging": "Bag",
+            "pack_size": 50,
+            "unit": "Kg",
+            "quantity": 700
+        },
+        {
+            "id": 10,
+            "chemical_name": "Phosphoric Acid",
+            "vendor": "AgroChem",
+            "density": 1680.5,
+            "viscosity": 3.45,
+            "packaging": "Bottle",
+            "pack_size": 10,
+            "unit": "L",
+            "quantity": 150
+        },
+        {
+            "id": 11,
+            "chemical_name": "Methanol",
+            "vendor": "BioChem",
+            "density": 791.8,
+            "viscosity": 0.59,
+            "packaging": "Drum",
+            "pack_size": 20,
+            "unit": "L",
+            "quantity": 900
+        },
+        {
+            "id": 12,
+            "chemical_name": "Ethanol",
+            "vendor": "PureSolv",
+            "density": 789.3,
+            "viscosity": 1.20,
+            "packaging": "Bottle",
+            "pack_size": 5,
+            "unit": "L",
+            "quantity": 600
+        },
+        {
+            "id": 13,
+            "chemical_name": "Hydrogen Peroxide",
+            "vendor": "OxidChem",
+            "density": 1450.3,
+            "viscosity": 1.25,
+            "packaging": "Bottle",
+            "pack_size": 1,
+            "unit": "L",
+            "quantity": 450
+        },
+        {
+            "id": 14,
+            "chemical_name": "Chlorine",
+            "vendor": "SafeChem",
+            "density": 1560.4,
+            "viscosity": 0.95,
+            "packaging": "Cylinder",
+            "pack_size": 10,
+            "unit": "Kg",
+            "quantity": 1200
+        },
+        {
+            "id": 15,
+            "chemical_name": "Potassium Nitrate",
+            "vendor": "AgriSupplies",
+            "density": 2273.8,
+            "viscosity": 65.8,
+            "packaging": "Bag",
+            "pack_size": 100,
+            "unit": "Kg",
+            "quantity": 9000
+        },
+        {
+            "id": 16,
+            "chemical_name": "Calcium Hypochlorite",
+            "vendor": "ChlorSupplies",
+            "density": 2393.0,
+            "viscosity": 82.5,
+            "packaging": "Bag",
+            "pack_size": 25,
+            "unit": "Kg",
+            "quantity": 500
+        },
+        {
+            "id": 17,
+            "chemical_name": "Ammonium Nitrate",
+            "vendor": "Explochem",
+            "density": 1720.5,
+            "viscosity": 1.15,
+            "packaging": "Bag",
+            "pack_size": 50,
+            "unit": "Kg",
+            "quantity": 7500
+        },
+        {
+            "id": 18,
+            "chemical_name": "Sodium Bicarbonate",
+            "vendor": "BakingChem",
+            "density": 2210.4,
+            "viscosity": 55.3,
+            "packaging": "Bag",
+            "pack_size": 25,
+            "unit": "Kg",
+            "quantity": 1600
+        },
+        {
+            "id": 19,
+            "chemical_name": "Zinc Oxide",
+            "vendor": "MetalChem",
+            "density": 5600.5,
+            "viscosity": 18.9,
+            "packaging": "Bag",
+            "pack_size": 50,
+            "unit": "Kg",
+            "quantity": 1200
+        },
+        {
+            "id": 20,
+            "chemical_name": "Copper Sulfate",
+            "vendor": "IndustrialChem",
+            "density": 3650.3,
+            "viscosity": 3.8,
+            "packaging": "Barrel",
+            "pack_size": 100,
+            "unit": "Kg",
+            "quantity": 2300
+        }
+    ]
+}
